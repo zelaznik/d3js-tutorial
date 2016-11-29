@@ -4,15 +4,24 @@
     <title>Basic Bar Chart</title>
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/flotr2.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="styles/index.css">
   </head>
-  <body>
-    <div id="chart"></div>
+
+  <body class="align-content-middle-center">
+    <div class="chart-container">
+      <h1 class="text-center">Flotr Tutorial</h1>
+      <div class="chart" id="main-chart"></div>
+    </div>
+
     <script>
       $(document).ready(function() {
         var years = [[0,2006],[1,2007],[2,2008],[3,2009],[4,2010],[5,2011],[6,2012]];
         var wins =  [[0,13],[1,11],[2,15],[3,15],[4,18],[5,21],[6,28]];
-        Flotr.draw($("#chart")[0], [wins], {
+        Flotr.draw($("#main-chart")[0], [wins], {
           title: "Manchester City Wins",
           colors: ["#89AFD2"],
           bars: {
