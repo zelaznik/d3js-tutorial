@@ -2,34 +2,19 @@
   <head>
     <meta charset="utf-8">
     <title>Basic Bar Chart</title>
+    <script src="js/jquery-3.1.1.js"></script>
     <script src="js/flotr2.js"></script>
     <link rel="stylesheet" href="styles/index.css">
   </head>
   <body>
     <div id="chart"></div>
     <script>
-      window.onload = function() {
-        var wins = [[
-          [2006,13],
-          [2007,11],
-          [2008,15],
-          [2009,15],
-          [2010,18],
-          [2011,21],
-          [2012,28]
-        ]];
-
-        Flotr.draw(
-          document.getElementById("chart"),
-          wins,
-          {
-            bars: {
-              show: true
-            }
-          }
-        );
-
-      };
+      $(document).ready(function() {
+        var wins = [[2006,13],[2007,11],[2008,15],[2009,15],[2010,18],[2011,21],[2012,28]];
+        Flotr.draw($("#chart")[0], [wins], {
+          bars: {show: true}
+        });
+      });
     </script>
   </body>
 </html>
