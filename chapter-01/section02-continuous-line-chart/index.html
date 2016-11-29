@@ -148,7 +148,20 @@
               lines: {show: true},
               yaxis: 2
             }
-        ]);
+        ], {
+          grid: {
+            horizontalLines: false,
+            verticalLines: false
+          },
+          yaxis: {
+            min: 300,
+            max: 400
+          },
+          y2axis: {
+            min: -0.25,
+            max: 0.75
+          }
+        });
       });
     </script>
   </body>
