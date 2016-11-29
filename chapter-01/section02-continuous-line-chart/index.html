@@ -134,20 +134,18 @@
           [2012, 0.6219],
           [2013, 0.6687],
           [2014, 0.7402],
-          [2015, 0.899],
-          [2016, 0.9659]
+          [2015, 0.899]
         ];
 
+        var zero = [];
+        for (var yr=1959; yr<2016; yr++) {
+          zero.push([yr, 0]);
+        }
+
         Flotr.draw($("#main-chart")[0], [
-            {
-              data: c02,
-              lines: {show: true}
-            },
-            {
-              data: temp,
-              lines: {show: true},
-              yaxis: 2
-            }
+            {data: zero, lines: {show: true, lineWidth: 2}, yaxis: 2, shadowSize: 1, color: '#D40000'},
+            {data: c02,  lines: {show: true}},
+            {data: temp, lines: {show: true}, yaxis: 2}
         ], {
           grid: {
             horizontalLines: false,
@@ -159,7 +157,7 @@
           },
           y2axis: {
             min: -0.25,
-            max: 0.75
+            max: 0.80
           }
         });
       });
