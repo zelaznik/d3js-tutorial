@@ -79,15 +79,24 @@
         var asia     =     asia_data.map(get_spending_and_life);
         var us       =       us_data.map(get_spending_and_life);
 
+        var colors = [
+          'rgb(0,168,240)',
+          'rgb(192,216,0)',
+          'rgb(203,75,75)',
+          'rgb(77,167,77)',
+          'rgb(148,64,237)',
+          'rgb(255,128,0)'
+        ];
+
         Flotr.draw(
             $('#main-chart')[0],
             [
-                {data: pacific,  label: "Pacific",       points: {show: true, fill: true}},
-                {data: europe,   label: "Europe",        points: {show: true, fill: true}},
-                {data: americas, label: "Americas",      points: {show: true, fill: true}},
-                {data: mideast,  label: "Middle East",   points: {show: true, fill: true}},
-                {data: asia,     label: "Asia",          points: {show: true, fill: true}},
-                {data: us,       label: "United States", points: {show: true, fill: true}}
+                {data: pacific,  label: "Pacific",       points: {show: true, fill: true, radius: 3, fillColor: colors[0]}, color: colors[0]},
+                {data: europe,   label: "Europe",        points: {show: true, fill: true, radius: 3, fillColor: colors[1]}, color: colors[1]},
+                {data: americas, label: "Americas",      points: {show: true, fill: true, radius: 3, fillColor: colors[2]}, color: colors[2]},
+                {data: mideast,  label: "Middle East",   points: {show: true, fill: true, radius: 3, fillColor: colors[3]}, color: colors[3]},
+                {data: asia,     label: "Asia",          points: {show: true, fill: true, radius: 3, fillColor: colors[4]}, color: colors[4]},
+                {data: us,       label: "United States", points: {show: true, fill: true, radius: 3, fillColor: colors[5]}, color: colors[5]},
             ],
             {
                 title:    "Life Expectancy vs. Health-Care Spending",
