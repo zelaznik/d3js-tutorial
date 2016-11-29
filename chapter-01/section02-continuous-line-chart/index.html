@@ -6,14 +6,16 @@
     <script src="js/flotr2.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap2.min.js"></script>
 
     <link rel="stylesheet" href="styles/index.css">
   </head>
 
   <body class="align-content-middle-center">
-    <div class="chart-container">
-      <div class="chart" id="main-chart"></div>
+    <div class="container">
+      <div class="chart-container">
+        <div class="chart" id="main-chart"></div>
+      </div>
     </div>
 
     <script>
@@ -143,10 +145,30 @@
         }
 
         Flotr.draw($("#main-chart")[0], [
-            {data: zero, lines: {show: true, lineWidth: 2}, yaxis: 2, shadowSize: 1, color: '#D40000'},
-            {data: c02,  lines: {show: true}},
-            {data: temp, lines: {show: true}, yaxis: 2}
+            {
+              data: zero,
+              label: "20<sup>th</sup> Century Baseline Temperature</span>",
+              lines: {show: true, lineWidth: 2},
+              yaxis: 2,
+              shadowSize: 2,
+              color:
+              '#D40000'
+            },
+            {
+              data: temp,
+              label: "Temperature Differance (<sup>O</sup>C)</span>",
+              lines: {show: true},
+              yaxis: 2,
+              color: '#00D400'
+            },
+            { 
+              data: c02,
+              label: "CO<sub>2</sub> Concentration (ppm)</span>",
+              lines: {show: true},
+              color: '#0000D4'
+            }
         ], {
+          title: "<h4>Global Temperature and CO<sub>2</sub> Concentration (NOAA Data)</h4>",
           grid: {
             horizontalLines: false,
             verticalLines: false
