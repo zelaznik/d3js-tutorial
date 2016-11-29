@@ -12,10 +12,8 @@
   </head>
 
   <body class="align-content-middle-center">
-    <div class="container">
-      <div class="chart-container">
-        <div class="chart" id="main-chart"></div>
-      </div>
+    <div class="chart-container">
+      <div class="chart" id="main-chart"></div>
     </div>
 
     <script>
@@ -63,7 +61,31 @@
           return [country.spending, country.life];
         });
 
-        Flotr.draw($('#main-chart')[0], [{data: data, points: {show: true}}]);
+        Flotr.draw(
+            $('#main-chart')[0],
+            [
+                {
+                    data: data,
+                    points: {
+                        show: true,
+                        radius: 4,
+                        fillColor: "#008000"
+                    },
+                    color: "#008000"
+                }
+            ],
+            {
+                title: "Life Expectancy vs. Health-Care Spending",
+                subtitle: "(by country, 2010 OECD data)",
+                xaxis: {
+                    min: 5, max: 20, tickDecimals: 0, title: 'Spending as Percent of GDP'
+                },
+                yaxis: {
+                    min: 70, max: 85, tickDecimals: 0, title: 'Years'
+                },
+                color: "#008000"
+            }
+        );
       });
     </script>
   </body>
