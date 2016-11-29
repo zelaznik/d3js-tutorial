@@ -12,7 +12,6 @@ body {
 .chart {
   width:  600px;
   height: 400px;
-  background-color: pink;
 }
 
 .flotr-legend-color-box, 
